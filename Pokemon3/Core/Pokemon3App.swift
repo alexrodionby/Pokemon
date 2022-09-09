@@ -5,6 +5,8 @@
 //  Created by Alexandr Rodionov on 2.09.22.
 //
 
+// MARK: - Точка входа в приложение
+
 import SwiftUI
 
 @main

@@ -5,6 +5,8 @@
 //  Created by Alexandr Rodionov on 2.09.22.
 //
 
+// MARK: - Экран с подробностями о покемоне
+
 import SwiftUI
 
 struct PokemonInfoView: View {

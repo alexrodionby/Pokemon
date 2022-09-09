@@ -5,6 +5,8 @@
 //  Created by Alexandr Rodionov on 4.09.22.
 //
 
+// MARK: - Сервис доставки данных для главного экрана
+
 import Foundation
 import Combine
 
@@ -20,14 +22,12 @@ class PokemonPageService {
     
     func getPage(url: String) {
         LocalFileManager.instance.createOfflineFileIfNeeded()
+        
         guard let dataOfOfflineDictionary = LocalFileManager.instance.getData(fileName: "pokemon_offline", folderName: "pokemon_cash") else { return }
         var offlineDictionary = LocalFileManager.instance.dataToDictionary(data: dataOfOfflineDictionary)
         
-        print("offlineDictionary =", offlineDictionary)
-        
         guard let url = URL(string: url) else { return }
         
-        print("юрл который проверяем", url.absoluteString)
         var loadFlag = 0
         for item in offlineDictionary {
             if item.key == url.absoluteString {
@@ -40,11 +40,11 @@ class PokemonPageService {
             guard let offlinedata = LocalFileManager.instance.getData(fileName: offlineDictionary[url.absoluteString] ?? "", folderName: "pokemon_cash") else { return }
             do {
                 self.page = try JSONDecoder().decode(PokemonPage.self, from: offlinedata)
-                print("Загружаем файл с диска")
             } catch let error {
                 print(error.localizedDescription)
             }
         } else {
+            
             offlineDictionary[url.absoluteString] = String(offlineDictionary.count + 1)
             guard let newData = LocalFileManager.instance.dictionaryToData(dictionary: offlineDictionary) else { return }
             LocalFileManager.instance.saveData(dataToSave: newData, fileName: "pokemon_offline", folderName: "pokemon_cash")

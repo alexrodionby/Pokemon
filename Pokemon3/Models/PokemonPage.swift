@@ -5,6 +5,8 @@
 //  Created by Alexandr Rodionov on 2.09.22.
 //
 
+// MARK: - Модель данных для главного экрана
+
 /*
  URL for Start APP: https://pokeapi.co/api/v2/pokemon
  URL second screen: https://pokeapi.co/api/v2/pokemon?offset=20&limit=20

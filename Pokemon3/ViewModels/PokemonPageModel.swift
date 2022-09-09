@@ -5,6 +5,8 @@
 //  Created by Alexandr Rodionov on 2.09.22.
 //
 
+// MARK: - Вьюмодель для главной страницы
+
 import Foundation
 import Combine
 

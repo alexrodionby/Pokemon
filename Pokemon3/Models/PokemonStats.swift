@@ -5,6 +5,8 @@
 //  Created by Alexandr Rodionov on 3.09.22.
 //
 
+// MARK: - Модель данных для экрана с подробностями о покемоне
+
 import Foundation
 
 /*
