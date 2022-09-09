@@ -10,6 +10,7 @@ import SwiftUI
 struct HomeView: View {
     
     @StateObject var vm = PokemonPageModel()
+    @StateObject var nm = NetworkMonitor()
     
     var body: some View {
         VStack {
@@ -32,8 +33,40 @@ struct HomeView: View {
                 } label: {
                     Text("Next")
                 }
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        if nm.isConnected {
+                            HStack(spacing: 10) {
+                                Text("WiFi ON")
+                                    .foregroundColor(.green)
+                                Image(systemName: "wifi")
+                            }
+                            
+                        }
+                        if nm.isCellular {
+                            HStack(spacing: 10) {
+                                Text("Cellular ON")
+                                    .foregroundColor(.yellow)
+                                Image(systemName: "candybarphone")
+                            }
+                        }
+                        if nm.isDisconnected {
+                            HStack(spacing: 10) {
+                                Text("NO Connection")
+                                    .foregroundColor(.red)
+                                Image(systemName: "antenna.radiowaves.left.and.right.slash")
+                            }
+                        }
+                    }
+                }
                 Spacer()
             }
+        }
+        .onAppear {
+            nm.start()
+        }
+        .onDisappear {
+            nm.stop()
         }
     }
 }
