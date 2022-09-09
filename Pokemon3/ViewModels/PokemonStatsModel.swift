@@ -5,6 +5,8 @@
 //  Created by Alexandr Rodionov on 4.09.22.
 //
 
+// MARK: - Вьюмодель для экрана с подробностями о покемоне
+
 import Foundation
 import Combine
 import SwiftUI

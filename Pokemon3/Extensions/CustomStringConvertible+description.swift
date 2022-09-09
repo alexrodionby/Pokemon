@@ -5,6 +5,8 @@
 //  Created by Alexandr Rodionov on 2.09.22.
 //
 
+// MARK: - Дополнение для лучшего отображения данных
+
 import Foundation
 
 extension CustomStringConvertible where Self: Codable {

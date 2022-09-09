@@ -5,10 +5,13 @@
 //  Created by Alexandr Rodionov on 9.09.22.
 //
 
+// MARK: - Сервис мониторинга наличия интернета
+
 import Foundation
 import Network
 
 final class NetworkMonitor: ObservableObject {
+    
     @Published private(set) var isConnected = false
     @Published private(set) var isCellular = false
     @Published private(set) var isDisconnected = false

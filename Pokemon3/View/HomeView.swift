@@ -5,6 +5,8 @@
 //  Created by Alexandr Rodionov on 2.09.22.
 //
 
+// MARK: - Главный экран со списком покемонов
+
 import SwiftUI
 
 struct HomeView: View {
@@ -41,7 +43,6 @@ struct HomeView: View {
                                     .foregroundColor(.green)
                                 Image(systemName: "wifi")
                             }
-                            
                         }
                         if nm.isCellular {
                             HStack(spacing: 10) {

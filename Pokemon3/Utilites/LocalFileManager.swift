@@ -5,6 +5,8 @@
 //  Created by Alexandr Rodionov on 5.09.22.
 //
 
+// MARK: - Локальныйц файловый менеджер
+
 import Foundation
 import SwiftUI
 
@@ -57,7 +59,6 @@ class LocalFileManager {
             let emptyDictionary: [String: String] = [:]
             if let data = dictionaryToData(dictionary: emptyDictionary) {
                 saveData(dataToSave: data, fileName: "pokemon_offline", folderName: "pokemon_cash")
-                print("Файл офлайна не нашелся и мы его создали прямо сейчас")
             }
         }
     }
